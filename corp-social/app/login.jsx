@@ -58,7 +58,7 @@ export default function Login() {
                     <Button title="Continuă" onPress={onLogin} style={{ width: '100%', marginTop: theme.spacing(1) }} />
 
                     <Text style={styles.helper}>
-                        Nu ai cont? <Link href="/auth/register" style={styles.link}>Creează unul</Link>
+                        Nu ai cont? <Link href="/register" style={styles.link}>Creează unul</Link>
                     </Text>
                 </BlurView>
             </View>

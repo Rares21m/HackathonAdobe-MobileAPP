@@ -5,11 +5,13 @@ import { BlurView } from 'expo-blur';
 import { colors, theme } from '../constants/theme';
 import Button from '../components/Button';
 import Screen from '../components/Screen';
+import { useRouter } from 'expo-router';
 
 const { width, height } = Dimensions.get('window');
 const BLOB = Math.max(width, height) * 0.6;
 
 export default function Welcome() {
+    const router = useRouter();
     return (
         <Screen style={{ alignItems: 'center', justifyContent: 'center' }}>
             <StatusBar barStyle="light-content" />
@@ -39,18 +41,15 @@ export default function Welcome() {
                     <Text style={styles.headTop}>Welcome back</Text>
                     <Text style={styles.headBottom}>Connect. Share. Grow.</Text>
 
-                    <Text style={styles.sub}>
-                        O platformă internă elegantă pentru echipa ta — sigură, simplă și frumoasă.
-                    </Text>
 
                     <Button
                         title="Log in"
-                        onPress={() => {}}
+                        onPress={() => router.push('/login')}
                         style={[styles.action, { width: '100%' }]}
                     />
                     <Button
                         title="Creează cont"
-                        onPress={() => {}}
+                            onPress={() => router.push('/register')}
                         style={[
                             styles.action,
                             {
@@ -62,6 +61,9 @@ export default function Welcome() {
                         ]}
                         textStyle={{ color: '#fff' }}
                     />
+
+
+
                 </BlurView>
 
                 <Text style={styles.footer}>© 2025 — Corp Social</Text>
